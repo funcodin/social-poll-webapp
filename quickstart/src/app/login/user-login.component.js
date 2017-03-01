@@ -10,23 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var secure_user_1 = require('./secure-user');
-var UserRegistationComponent = (function () {
-    function UserRegistationComponent() {
+var UserLoginComponent = (function () {
+    function UserLoginComponent() {
     }
-    UserRegistationComponent.prototype.userLogin = function (form) {
+    UserLoginComponent.prototype.userLogin = function (form) {
         console.log("user creates", form);
         this.secureUser = new secure_user_1.SecureUser(form.username, form.password);
     };
-    UserRegistationComponent = __decorate([
+    UserLoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'login-form',
-            templateUrl: './html/user-registration-form.html',
+            templateUrl: './html/user-login-form.html',
             styleUrls: ['./css/styles.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], UserRegistationComponent);
-    return UserRegistationComponent;
+    ], UserLoginComponent);
+    return UserLoginComponent;
 }());
-exports.UserRegistationComponent = UserRegistationComponent;
+exports.UserLoginComponent = UserLoginComponent;
 //# sourceMappingURL=user-login.component.js.map

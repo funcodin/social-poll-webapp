@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var user_registration_component_1 = require('./registration/user-registration.component');
+var user_login_component_1 = require('./login/user-login.component');
 var forms_1 = require('@angular/forms');
 var AppModule = (function () {
     function AppModule() {
@@ -19,7 +20,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, user_registration_component_1.UserRegistationComponent],
+            declarations: [app_component_1.AppComponent, user_registration_component_1.UserRegistationComponent, user_login_component_1.UserLoginComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -5,10 +5,10 @@ import { SecureUser } from './secure-user';
 @Component({
   moduleId: module.id,
   selector: 'login-form',
-  templateUrl: './html/user-registration-form.html',
+  templateUrl: './html/user-login-form.html',
   styleUrls: ['./css/styles.css']
 })
-export class UserRegistationComponent {
+export class UserLoginComponent {
 secureUser: SecureUser;
 
 userLogin(form : any){
