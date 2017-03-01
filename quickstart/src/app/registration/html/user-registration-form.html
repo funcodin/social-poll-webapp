@@ -1,0 +1,49 @@
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-5">
+        <form class="login-reg" (ngSubmit)="createUser(userForm.value)" #userForm="ngForm">
+          <div class="row">
+            <div class="col-sm-12">
+              <h3 class="pull-stop">Sign Up</h3>
+              <p>World is waiting for your opinions.</p>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="text" class="form-control input-lg" id="firstnameInput"
+                placeholder="First Name*"
+                required
+                 name="firstname"
+                  ngModel>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="text" class="form-control input-lg" id="lastnameInput"
+                placeholder="Last Name*"
+                 required
+                 ngModel
+                 name="lastname">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="email" class="form-control input-lg" id="emailInput"
+                 placeholder="Your Email*"
+                  required
+                  ngModel
+                  name="email"
+                  >
+              </div>
+              <button type="submit" class="btn btn-info btn-block button">Sign Up</button>
+              <div class="sign-tag"><p>If You Already Have a Account | <a href="#">Log In</a></p></div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div><!-- row -->
+  </div> <!-- conatiner -->
