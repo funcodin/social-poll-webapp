@@ -1,9 +1,8 @@
-export class NewUser {
+export class SecureUser {
 
   constructor (
     public userName: string,
     public password: string,
-    public fullName: string,
-    public email: string)
+    )
     {}
 }

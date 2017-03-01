@@ -1,8 +1,9 @@
 "use strict";
 var NewUser = (function () {
-    function NewUser(firstName, lastName, email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    function NewUser(userName, password, fullName, email) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
         this.email = email;
     }
     return NewUser;

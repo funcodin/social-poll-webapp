@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { NewUser } from './new-user';
+import { SecureUser } from './secure-user';
 
 
 @Component({
   moduleId: module.id,
-  selector: 'registration-form',
+  selector: 'login-form',
   templateUrl: './html/user-registration-form.html',
   styleUrls: ['./css/styles.css']
 })
 export class UserRegistationComponent {
-newUser: NewUser;
+secureUser: SecureUser;
 
-createUser(form : any){
+userLogin(form : any){
   console.log("user creates", form);
-  this.newUser = new NewUser(form.username, form.password, form.fullname, form.email);
+  this.secureUser = new SecureUser(form.username, form.password);
 
 }
 
