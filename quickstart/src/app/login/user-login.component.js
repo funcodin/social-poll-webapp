@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var new_user_1 = require('./new-user');
+var secure_user_1 = require('./secure-user');
 var UserRegistationComponent = (function () {
     function UserRegistationComponent() {
     }
-    UserRegistationComponent.prototype.createUser = function (form) {
+    UserRegistationComponent.prototype.userLogin = function (form) {
         console.log("user creates", form);
-        this.newUser = new new_user_1.NewUser(form.username, form.password, form.fullname, form.email);
+        this.secureUser = new secure_user_1.SecureUser(form.username, form.password);
     };
     UserRegistationComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'registration-form',
+            selector: 'login-form',
             templateUrl: './html/user-registration-form.html',
             styleUrls: ['./css/styles.css']
         }), 
@@ -29,4 +29,4 @@ var UserRegistationComponent = (function () {
     return UserRegistationComponent;
 }());
 exports.UserRegistationComponent = UserRegistationComponent;
-//# sourceMappingURL=user-registration.component.js.map
+//# sourceMappingURL=user-login.component.js.map
