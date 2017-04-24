@@ -5,12 +5,22 @@
   padding-right: 0px;
   padding-left: 0px;
   background: #2C3E50;
-
+  font-size: 120%;
+  border-radius: 0px;
+  border: 0px;
 
 }
 
+
+
 .navbar-brand {
   color: #fff;
+  font-size: 180%;
+}
+
+.navbar-brand:hover{
+  color: #18BC9C;
+  font-size: 180%;
 }
 
 .navbar-nav a {
