@@ -1,0 +1,22 @@
+<top-nav></top-nav>
+<div class="jumbotron">
+
+
+<div class="card">
+  <div class="card-block login-card">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" ngModel id="username" name="username" placeholder="Username" required >
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Password</label>
+        <input type="password" class="form-control" ngModel id="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled] = !loginForm.valid>Login</button>
+
+    </form>
+  </div>
+</div>
+
+</div>
