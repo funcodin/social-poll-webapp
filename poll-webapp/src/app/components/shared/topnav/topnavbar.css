@@ -1,3 +1,26 @@
 .top-navbar {
   margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
+  background: #2C3E50;
+
+
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav a {
+  color: #fff;
+}
+.navbar-nav a:hover {
+  color: #fff;
+}
+
+.navbar-nav .active a{
+  background-color: #2C3E50;
+  color: #18BC9C;
 }
