@@ -1,4 +1,4 @@
-
+<top-nav></top-nav>
 <div class="jumbotron text-center main-header">
   <h1>Create simple polls</h1>
   <p>Let the world answer your questions</p>
@@ -17,11 +17,11 @@
     </div>
 
     <div class="col-sm-3 text-center">
-      <button type="button" class="btn btn-primary">Sign In</button>
+      <button type="button" class="btn btn-primary" (click)="loadLogIn()">Sign In</button>
     </div>
 
     <div class="col-sm-3 text-center">
-      <button type="button" class="btn btn-primary">Sign Up</button>
+      <button type="button" class="btn btn-primary" (click)="loadSignUp()">Sign Up</button>
     </div>
 
     <div class="col-sm-3">
