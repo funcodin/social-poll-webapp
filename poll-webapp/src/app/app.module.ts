@@ -11,6 +11,7 @@ import { LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
 import {ContactUsComponent} from './components/contact/contactus.component';
 import {AboutUsComponent} from './components/about/about.component';
+import { SignupService } from './services/signup/signup.service';
 
 const appRoutes : Routes = [
   {path: '', component: HomeComponent},
@@ -37,7 +38,7 @@ const appRoutes : Routes = [
     HttpModule,
     RouterModule.forRoot( appRoutes)
   ],
-  providers: [],
+  providers: [ SignupService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
