@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { SigninService } from '../../services/signin/signin.service';
 import { Response } from '@angular/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'login-page',
@@ -16,7 +17,7 @@ export class LoginComponent{
 @ViewChild('loginForm') loginForm : NgForm;
 
 
-  constructor( private signinService : SigninService ){
+  constructor( private signinService : SigninService, private router : Router ){
 
   }
 
@@ -28,6 +29,7 @@ onSubmit(){
     (response: Response ) => {
       this.loginUser = response.json();
       console.log( this.loginUser );
+      this.router.navigate(['/']);
 
     },
     (error) => {
