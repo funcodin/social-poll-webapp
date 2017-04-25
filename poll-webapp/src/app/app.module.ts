@@ -9,11 +9,15 @@ import { TopNavComponent } from './components/shared/topnav/topnav.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
+import {ContactUsComponent} from './components/contact/contactus.component';
+import {AboutUsComponent} from './components/about/about.component';
 
 const appRoutes : Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'contact', component: ContactUsComponent},
+  {path: 'about', component: AboutUsComponent},
 ];
 
 @NgModule({
@@ -23,6 +27,8 @@ const appRoutes : Routes = [
     HomeComponent,
     LoginComponent,
     SignupComponent,
+    ContactUsComponent,
+    AboutUsComponent,
 
   ],
   imports: [
