@@ -12,6 +12,7 @@ import {SignupComponent} from './components/signup/signup.component';
 import {ContactUsComponent} from './components/contact/contactus.component';
 import {AboutUsComponent} from './components/about/about.component';
 import { SignupService } from './services/signup/signup.service';
+import { SigninService } from './services/signin/signin.service';
 
 const appRoutes : Routes = [
   {path: '', component: HomeComponent},
@@ -38,7 +39,11 @@ const appRoutes : Routes = [
     HttpModule,
     RouterModule.forRoot( appRoutes)
   ],
-  providers: [ SignupService ],
+  providers: [
+    SignupService,
+    SigninService
+
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
