@@ -29,7 +29,7 @@ onSubmit(){
     (response: Response ) => {
       this.loginUser = response.json();
       console.log( this.loginUser );
-      this.router.navigate(['/']);
+      this.router.navigate(['/poll']);
 
     },
     (error) => {

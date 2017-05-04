@@ -1,11 +1,12 @@
 .main-header{
-  margin-top: 80px;
+
   margin-bottom: 0px;
   height: 300px;
 
 }
 .alternate-block-color{
   background-color: #18BC9C;
+  height: 300px;
   color: #fff;
 }
 .use-cases{
@@ -17,13 +18,18 @@
 }
 
 .use-cases-img{
-  width: 300px;
-  height:150px;
+height:150px;
+
+}
+
+.text-color{
+  color: black;
 }
 
 .card-content-text{
   width: 300px;
   height: 80px;
+
 }
 
 .container-block{

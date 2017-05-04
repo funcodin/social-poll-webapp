@@ -1,0 +1,11 @@
+.container-block{
+
+  background-color: #eee;
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: space-around;
+}
+
+.card{
+  margin: 2%;
+}
