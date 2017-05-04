@@ -17,6 +17,7 @@ import { PollComponent } from './components/polls/poll.component';
 //Services
 import { SignupService } from './services/signup/signup.service';
 import { SigninService } from './services/signin/signin.service';
+import { PollService } from './services/poll/poll.service';
 
 
 const appRoutes : Routes = [
@@ -48,7 +49,8 @@ const appRoutes : Routes = [
   ],
   providers: [
     SignupService,
-    SigninService
+    SigninService,
+    PollService
 
    ],
   bootstrap: [AppComponent]

@@ -1,36 +1,48 @@
-<nav class="navbar navbar-default navbar-fixed-top sticky-top top-navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/">Poll Bag</a>
-    </div>
+<nav class="navbar navbar-toggleable-md navbar-light top-navbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+  <a class="navbar-brand" routerLink="/">Poll Bag</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav navbar-right">
 
-      <ul class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active"
-        [routerLinkActiveOptions]= "{exact:true}">
-          <a class="top-nav-menu-item" routerLink="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-        </li>
-
-        <li routerLinkActive="active">
-          <a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
-        </li>
-
-
-        <li routerLinkActive="active">
-          <a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-        </li>
-
-        <li routerLinkActive="active">
-          <a routerLink="/contact"><span class="glyphicon glyphicon-phone-alt"></span>  Contact Us</a>
-        </li>
-
-        <li routerLinkActive="active">
-          <a routerLink="/about"><span class="glyphicon glyphicon-info-sign"></span> About Us</a>
-        </li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      <li class="nav-item" routerLinkActive="active"
+      [routerLinkActiveOptions]= "{exact:true}">
+        <a class="nav-link " routerLink="/">
+          <span class="glyphicon glyphicon-home">
+          </span>
+          Home
+        </a>
+      </li>
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/login">
+          <span class="glyphicon glyphicon-log-in">
+          </span>
+           Log In
+         </a>
+      </li>
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/signup">
+          <span class="glyphicon glyphicon-user">
+          </span>
+           Sign Up
+         </a>
+      </li>
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact">
+          <span class="glyphicon glyphicon-phone-alt">
+          </span>
+            Contact Us
+          </a>
+      </li>
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">
+          <span class="glyphicon glyphicon-info-sign">
+          </span>
+           About Us
+         </a>
+      </li>
+    </ul>
+  </div>
 </nav>

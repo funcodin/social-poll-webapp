@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { SignupService } from '../../services/signup/signup.service';
 import { Response } from '@angular/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ isError = false;
 
 @ViewChild('createUserForm') createUserForm : NgForm;
 
-  constructor( private signupService : SignupService ){
+  constructor( private router: Router, private signupService : SignupService ){
 
   }
 
@@ -29,6 +30,8 @@ isError = false;
       (response: Response) => {
         console.log( response.json())
         this.user = response.json();
+        this.router.navigate( ['/poll'] );
+
       },
       (error) => {
         console.log( error )
