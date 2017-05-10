@@ -19,28 +19,72 @@
           Home
         </a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+      <li *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/login">
           <i class="fa fa-sign-in">
           </i>
            Log In
          </a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+      <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/signup">
           <i class="fa fa-rocket">
           </i>
            Sign Up
          </a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+
+      <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/signup">
+          <i class="fa fa-th-list">
+          </i>
+           Polls
+         </a>
+      </li>
+      <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/signup">
+          <i class="fa fa-pencil">
+          </i>
+           Create Poll
+         </a>
+      </li>
+      <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/asked">
+          <i class="fa fa-envelope">
+          </i>
+           Asked
+         </a>
+      </li>
+      <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/voted">
+          <i class="fa fa-check-square-o">
+          </i>
+           Voted
+         </a>
+      </li>
+
+      <!-- <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/voted">
+          <i class="fa fa-user">
+          </i>
+           Profile
+         </a>
+      </li> -->
+      <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/signout">
+          <i class="fa fa-rocket">
+          </i>
+           Sign Out
+         </a>
+      </li>
+      <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/contact">
           <i class="fa fa-phone">
           </i>
             Contact Us
           </a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+      <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/about">
           <i class="fa fa-info">
           </i>
