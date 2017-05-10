@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { PollService } from '../../services/poll/poll.service';
 import { UserPoll } from '../../types/userpoll';
+import {CookieService} from 'angular2-cookie/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'poll-list',
@@ -15,13 +17,18 @@ export class PollComponent implements OnInit {
   isLastPage: boolean = false;
   userId: string;
   lastPageIndex: number;
+  pollUser : any;
 
-    constructor( private pollService: PollService){
+    constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
 
     }
 
     ngOnInit(){
       this.getFirstPage();
+      this.pollUser = this.cookieService.getObject('pollUser');
+      if( this.pollUser === undefined ){
+        this.router.navigate(['/login']);
+      }
     }
 
 vote( optionId : string, questionId : string ){

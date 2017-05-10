@@ -19,6 +19,7 @@ import { PollVoted } from './components/user/voted/pollvoted.component';
 import { SignupService } from './services/signup/signup.service';
 import { SigninService } from './services/signin/signin.service';
 import { PollService } from './services/poll/poll.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
 const appRoutes : Routes = [
@@ -54,7 +55,8 @@ const appRoutes : Routes = [
   providers: [
     SignupService,
     SigninService,
-    PollService
+    PollService,
+    CookieService
 
    ],
   bootstrap: [AppComponent]

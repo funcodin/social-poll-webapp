@@ -3,6 +3,7 @@ import { NgForm} from '@angular/forms';
 import { SigninService } from '../../services/signin/signin.service';
 import { Response } from '@angular/http';
 import {Router} from '@angular/router';
+import {CookieService} from 'angular2-cookie/core';
 
 @Component({
   selector: 'login-page',
@@ -17,7 +18,7 @@ export class LoginComponent{
 @ViewChild('loginForm') loginForm : NgForm;
 
 
-  constructor( private signinService : SigninService, private router : Router ){
+  constructor( private signinService : SigninService, private cookieService : CookieService, private router : Router ){
 
   }
 
@@ -29,6 +30,7 @@ onSubmit(){
     (response: Response ) => {
       this.loginUser = response.json();
       console.log( this.loginUser );
+      this.cookieService.putObject('pollUser', this.loginUser);
       this.router.navigate(['/poll']);
 
     },

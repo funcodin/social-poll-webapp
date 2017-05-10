@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PollService } from '../../../services/poll/poll.service';
 import { Response } from '@angular/http';
 import { NgbProgressbar } from '@ng-bootstrap/ng-bootstrap';
+import {CookieService} from 'angular2-cookie/core';
 
 @Component({
   selector : 'poll-voted',
@@ -15,14 +16,19 @@ export class PollVoted implements OnInit {
   isLastPage: boolean = false;
   userId: string;
   lastPageIndex: number;
+  pollUser : any;
 
-  constructor( private pollService: PollService){
+  constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
 
   }
 
 
   ngOnInit(){
     this.getFirstVotedPage();
+    this.pollUser = this.cookieService.getObject('pollUser');
+    if( this.pollUser === undefined ){
+      this.router.navigate(['/login']);
+    }
   }
 
 
