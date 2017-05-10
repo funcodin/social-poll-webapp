@@ -51,5 +51,12 @@ export class PollService {
     return this.http.get( httpUrl, {headers });
   }
 
+  getPollCreatedFirstPage(){
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:8080/ws/question/latestByUser/user/fe7702db-d08f-44f8-8466-de434bd7c14b/limit/15', {headers} );
+  }
+
 
 }

@@ -13,6 +13,8 @@ import {SignupComponent} from './components/signup/signup.component';
 import {ContactUsComponent} from './components/contact/contactus.component';
 import {AboutUsComponent} from './components/about/about.component';
 import { PollComponent } from './components/polls/poll.component';
+import { PollCreatedComponent } from './components/user/created/pollcreated.component';
+
 import { SignOutComponent } from './components/signout/signout.component';
 
 import { PollVoted } from './components/user/voted/pollvoted.component';
@@ -32,6 +34,7 @@ const appRoutes : Routes = [
   {path: 'about', component: AboutUsComponent},
   {path: 'poll', component: PollComponent},
   {path: 'voted', component: PollVoted},
+  {path: 'asked', component: PollCreatedComponent},
   {path: 'signout', component: SignOutComponent}
 ];
 
@@ -46,6 +49,7 @@ const appRoutes : Routes = [
     AboutUsComponent,
     PollComponent,
     PollVoted,
+    PollCreatedComponent,
     SignOutComponent
 
   ],
