@@ -36,6 +36,20 @@ export class PollService {
     return this.http.post('http://localhost:8080/ws/userpoll/create', userPoll, {headers} );
   }
 
+  getFirstVotedPage(){
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:8080/ws/question/latestVotedByUser/user/fe7702db-d08f-44f8-8466-de434bd7c14b/limit/15', {headers} );
+  }
+
+  getNextVotedPage( userId: string, limit: number, lastIndex: number ){
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let httpUrl: string = "http://localhost:8080/ws/question/getPaginatedQuestionVotedByUser/user/"+userId+"/lastQuestionIndex/"+lastIndex+"/limit/"+limit;
+    return this.http.get( httpUrl, {headers });
+  }
 
 
 }
