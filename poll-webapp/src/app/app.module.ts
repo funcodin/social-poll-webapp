@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 //Components
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './components/shared/topnav/topnav.component';
@@ -55,6 +58,8 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
