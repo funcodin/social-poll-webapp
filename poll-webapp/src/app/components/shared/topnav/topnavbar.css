@@ -11,11 +11,15 @@
 
 }
 
-
+.navbar-align-left{
+  justify-content: flex-end;
+  margin-right: 2%;
+}
 
 .navbar-brand {
   color: #fff;
   font-size: 180%;
+  margin-left: 2%;
 }
 
 .navbar-brand:hover{

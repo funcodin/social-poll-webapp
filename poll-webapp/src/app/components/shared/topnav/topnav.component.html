@@ -3,43 +3,47 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" routerLink="/">Poll Bag</a>
-  <div class="collapse navbar-collapse">
+  <a class="navbar-brand" routerLink="/">
+    <i class="fa fa-shopping-bag">
+    </i>
+    Poll Bag
+  </a>
+  <div class="collapse navbar-collapse navbar-align-left">
     <ul class="navbar-nav navbar-right">
 
       <li class="nav-item" routerLinkActive="active"
       [routerLinkActiveOptions]= "{exact:true}">
         <a class="nav-link " routerLink="/">
-          <span class="glyphicon glyphicon-home">
-          </span>
+          <i class="fa fa-home">
+          </i>
           Home
         </a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/login">
-          <span class="glyphicon glyphicon-log-in">
-          </span>
+          <i class="fa fa-sign-in">
+          </i>
            Log In
          </a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/signup">
-          <span class="glyphicon glyphicon-user">
-          </span>
+          <i class="fa fa-rocket">
+          </i>
            Sign Up
          </a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/contact">
-          <span class="glyphicon glyphicon-phone-alt">
-          </span>
+          <i class="fa fa-phone">
+          </i>
             Contact Us
           </a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/about">
-          <span class="glyphicon glyphicon-info-sign">
-          </span>
+          <i class="fa fa-info">
+          </i>
            About Us
          </a>
       </li>
