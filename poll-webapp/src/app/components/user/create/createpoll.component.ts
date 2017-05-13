@@ -8,8 +8,21 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreatePollComponent implements OnInit{
 
+  optionTypes : string[] = ['BINARY','MULTIPLE','STAR', 'NUMBER'];
+
+  optionValues : string[] =[];
+
   ngOnInit(){
 
   }
 
+  optionSelected( option : string ){
+    console.log( option );
+    this.optionValues.push('test');
+    console.log( this.optionValues);
+  }
+
+  onSubmit(){
+    console.log( 'why I am getting called');
+  }
 }
