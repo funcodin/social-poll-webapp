@@ -11,7 +11,7 @@ export class ContactUsComponent {
 @ViewChild('contactUsForm') contactUsForm : NgForm;
 
 onSubmit(){
-  console.log( this.contactUsForm);
+  console.log( this.contactUsForm.value);
 }
 
 }

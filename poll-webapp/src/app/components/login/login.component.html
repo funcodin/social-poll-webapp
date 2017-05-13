@@ -1,25 +1,25 @@
 <top-nav></top-nav>
-
-
 <div class="container-fluid container-block">
-
-  <div class="card-block login-card">
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ngModel id="username" name="username" placeholder="Username" required >
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" ngModel id="password" name="password" placeholder="Password" required>
-      </div>
-      <button type="submit" class="btn btn-primary" [disabled] = !loginForm.valid>Login</button>
-
-    </form>
-  </div>
-
-<div [hidden]="!isError">
-  <p>Oops, Something went wrong !!!</p>
-</div>
-
+    <div class="row justify-content-center">
+        <div class="card mt-5 card-layout" style="width: 30rem;">
+            <div class="card-block justify-content-center">
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" ngModel id="username" name="username" placeholder="Username" required >
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" ngModel id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="text-center" >
+                    <button type="submit" class="btn btn-primary" [disabled] = !loginForm.valid>Login</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div [hidden]="!isError">
+        <p>Oops, Something went wrong !!!</p>
+    </div>
 </div>
