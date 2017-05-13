@@ -2,3 +2,14 @@
 body {
   background-color: #eee;
 }
+
+.container-block{
+  background-color: #eee;
+  margin-bottom: 0px;
+}
+
+
+.card-layout{
+  box-shadow: 15px 15px 10px grey;
+  border-radius: 25px
+}
