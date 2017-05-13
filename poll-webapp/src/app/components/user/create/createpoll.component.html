@@ -3,7 +3,7 @@
 
 
 <div class="row justify-content-center">
-  <div class="card mt-5" style="width: 40rem;">
+  <div class="card mt-5 card-layout" style="width: 40rem;">
     <div class="card-block justify-content-center">
       <form (ngSubmit)="onSubmit()" #createPollForm="ngForm">
         <div class="form-group">
@@ -11,24 +11,23 @@
           <input type="text" class="form-control" ngModel id="question" name="question" placeholder="Question" required >
         </div>
 
-        <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Option Type</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
-                  <div *ngFor="let option of optionTypes">
-                    <button type="button" class="dropdown-item" id="option" on-click="optionSelected(option)">{{option}}</button>
-                  </div>
-                </div>
-             </div>
-          </div>
-         </div>
-
          <div class="" *ngFor="let optionValue of optionValues">
            <div class="form-group">
              <input type="text" class="form-control" ngModel id="question" name="question" placeholder="Option" required>
            </div>
          </div>
+         <div class="row">
+           <div class="col">
+             <div ngbDropdown class="d-inline-block">
+               <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Option Type</button>
+                 <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+                   <div *ngFor="let option of optionTypes">
+                     <button type="button" class="dropdown-item" id="option" on-click="optionSelected(option)">{{option}}</button>
+                   </div>
+                 </div>
+              </div>
+           </div>
+          </div>
 
         <div class="text-center">
              <button type="submit" class="btn btn-primary" [disabled] = !createPollForm.valid>Post</button>
