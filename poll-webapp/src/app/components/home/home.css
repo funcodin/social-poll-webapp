@@ -17,6 +17,12 @@
   height:300px;
 }
 
+.center-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .use-cases-img{
 height:150px;
 
