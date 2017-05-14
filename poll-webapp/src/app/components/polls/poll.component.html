@@ -1,13 +1,10 @@
 <top-nav></top-nav>
 
-
-
-
 <div class="container-fluid container-block" (window:scroll)="onScroll($event)">
 
     <div class="col-md-4" *ngFor = "let question of pollQuestions.questions; let i = index">
 
-      <div class="card">
+      <div class="card card-layout">
 
         <div class="card-block">
           <h4 class="card-title">
