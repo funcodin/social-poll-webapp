@@ -3,7 +3,7 @@
 
     <div class="col-md-4" *ngFor = "let question of votedPolls.questions; let i = index">
 
-      <div class="card">
+      <div class="card card-layout">
 
         <div class="card-block">
           <h4 class="card-title">
@@ -14,7 +14,10 @@
           </p>
 
           <div class="progress-bar-div" *ngFor = "let option of question.options">
-            <ngb-progressbar type="success" [value]=calculatePercentage(option.voteCount,question.totalVotes)>{{option.optionValue}}</ngb-progressbar>
+            <div class="">
+                {{option.optionValue}}
+            </div>
+              <ngb-progressbar type="success" [value]=calculatePercentage(option.voteCount,question.totalVotes)>{{calculatePercentage(option.voteCount,question.totalVotes)}}%</ngb-progressbar>
           </div>
         </div>
 

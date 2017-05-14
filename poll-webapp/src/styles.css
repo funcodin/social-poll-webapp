@@ -13,3 +13,10 @@ body {
   box-shadow: 15px 15px 10px grey;
   border-radius: 25px
 }
+
+.progress-bar {
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
