@@ -1,20 +1,7 @@
-.main-header{
-
-  margin-bottom: 0px;
-  height: 300px;
-
-}
 .alternate-block-color{
   background-color: #18BC9C;
   height: 300px;
   color: #fff;
-}
-.use-cases{
-  margin-top: 5%;
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-bottom: 5%;
-  height:300px;
 }
 
 .center-div{
@@ -23,26 +10,12 @@
   justify-content: center;
 }
 
-.use-cases-img{
-height:150px;
-
-}
-
 .text-color{
   color: black;
 }
 
-.card-content-text{
-  width: 300px;
-  height: 80px;
-
-}
 
 .container-block{
   height:300px;
   background-color: #eee;
-}
-
-.home-footer{
-  margin: 10%;
 }
