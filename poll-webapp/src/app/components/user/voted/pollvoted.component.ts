@@ -24,20 +24,20 @@ export class PollVoted implements OnInit {
 
 
   ngOnInit(){
-    this.getFirstVotedPage();
     this.pollUser = this.cookieService.getObject('pollUser');
     if( this.pollUser === undefined ){
       this.router.navigate(['/login']);
     }
-  }
+     this.getFirstVotedPage();
 
+  }
 
   calculatePercentage( voteCount:number, totalVotes:number): number{
     return (voteCount/totalVotes)*100
   }
 
   getFirstVotedPage(){
-    this.pollService.getFirstVotedPage()
+    this.pollService.getFirstVotedPage( this.pollUser.userId )
     .subscribe(
       (response : Response ) => {
         console.log( response );
