@@ -1,0 +1,50 @@
+<top-nav></top-nav>
+<div class="container-fluid container-block" >
+
+
+<div class="row justify-content-center">
+  <div class="card mt-5 card-layout" style="width: 40rem;">
+    <div class="card-block justify-content-center">
+      <form (ngSubmit)="onSubmit()" #createPollForm="ngForm">
+        <div class="form-group">
+          <label>Question</label>
+          <input type="text" class="form-control" ngModel id="question" name="question" placeholder="Question" required >
+        </div>
+
+         <div class="" *ngFor="let optionValue of optionValues; let i = index">
+           <div class="form-group">
+             <input type="text" class="form-control" ngModel id="option_{{i}}" name="option_{{i}}" placeholder="Option" required>
+           </div>
+         </div>
+
+         <div class="row justify-content-center mb-4">
+           <button type="button" class="btn btn-primary mr-2" id="addOption" (click)="addOption()">+</button>
+           <button type="button" class="btn btn-warning ml-2" id="removeOption" (click)="removeOption()">-</button>
+         </div>
+
+        <div class="text-center">
+             <button type="submit" class="btn btn-success" [disabled] = !createPollForm.valid>Post</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+<!-- <div class="row">
+ <div class="col">
+   <div ngbDropdown class="d-inline-block">
+     <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Option Type</button>
+       <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+         <div *ngFor="let option of optionTypes">
+           <button type="button" class="dropdown-item" id="option" on-click="optionSelected(option)">{{option}}</button>
+         </div>
+       </div>
+    </div>
+ </div>
+</div> -->

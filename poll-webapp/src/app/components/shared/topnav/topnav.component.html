@@ -23,7 +23,7 @@
         <a class="nav-link" routerLink="/login">
           <i class="fa fa-sign-in">
           </i>
-           Log In
+           Sign In
          </a>
       </li>
       <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
@@ -35,14 +35,14 @@
       </li>
 
       <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/signup">
+        <a class="nav-link" routerLink="/poll">
           <i class="fa fa-th-list">
           </i>
            Polls
          </a>
       </li>
       <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/signup">
+        <a class="nav-link" routerLink="/create">
           <i class="fa fa-pencil">
           </i>
            Create Poll
@@ -72,7 +72,7 @@
       </li> -->
       <li  *ngIf ="!isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/signout">
-          <i class="fa fa-rocket">
+          <i class="fa fa-sign-out">
           </i>
            Sign Out
          </a>

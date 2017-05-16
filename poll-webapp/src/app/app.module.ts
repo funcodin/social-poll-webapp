@@ -17,6 +17,7 @@ import {ContactUsComponent} from './components/contact/contactus.component';
 import {AboutUsComponent} from './components/about/about.component';
 import { PollComponent } from './components/polls/poll.component';
 import { PollCreatedComponent } from './components/user/created/pollcreated.component';
+import { CreatePollComponent } from './components/user/create/createpoll.component';
 
 import { SignOutComponent } from './components/signout/signout.component';
 
@@ -38,7 +39,9 @@ const appRoutes : Routes = [
   {path: 'poll', component: PollComponent},
   {path: 'voted', component: PollVoted},
   {path: 'asked', component: PollCreatedComponent},
+  {path: 'create', component: CreatePollComponent},
   {path: 'signout', component: SignOutComponent}
+
 ];
 
 @NgModule({
@@ -53,6 +56,7 @@ const appRoutes : Routes = [
     PollComponent,
     PollVoted,
     PollCreatedComponent,
+    CreatePollComponent,
     SignOutComponent
 
   ],

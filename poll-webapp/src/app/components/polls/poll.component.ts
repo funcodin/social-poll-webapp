@@ -20,14 +20,16 @@ export class PollComponent implements OnInit {
   pollUser : any;
 
     constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
-
+      
     }
 
     ngOnInit(){
-      this.getFirstPage();
+
       this.pollUser = this.cookieService.getObject('pollUser');
       if( this.pollUser === undefined ){
         this.router.navigate(['/login']);
+      }else{
+        this.getFirstPage();
       }
     }
 
@@ -89,7 +91,6 @@ getNextPage() {
       console.log( error )
     }
   )
-
 
 }
 
