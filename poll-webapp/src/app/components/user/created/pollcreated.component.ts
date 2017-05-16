@@ -24,15 +24,16 @@ export class PollCreatedComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.getPollCreatedFirstPage();
+
     this.pollUser = this.cookieService.getObject('pollUser');
     if( this.pollUser === undefined ){
       this.router.navigate(['/login']);
     }
+    this.getPollCreatedFirstPage();
   }
 
   getPollCreatedFirstPage(){
-    this.pollService.getPollCreatedFirstPage()
+    this.pollService.getPollCreatedFirstPage(this.pollUser.userId)
     .subscribe(
       (response : Response ) => {
         console.log( response );
@@ -47,6 +48,8 @@ export class PollCreatedComponent implements OnInit{
   }
 
   calculatePercentage( voteCount:number, totalVotes:number): number{
+    if(voteCount == 0)
+    return 0;
     return (voteCount/totalVotes)*100
   }
 

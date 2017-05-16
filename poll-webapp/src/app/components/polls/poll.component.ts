@@ -20,7 +20,7 @@ export class PollComponent implements OnInit {
   pollUser : any;
 
     constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
-      
+
     }
 
     ngOnInit(){
@@ -34,17 +34,14 @@ export class PollComponent implements OnInit {
     }
 
 vote( optionId : string, questionId : string ){
-  console.log('Clicked ' + optionId+ 'Question id ' + questionId );
-  let userPoll = new UserPoll( '7e2fb5e5-86ae-4259-a9dc-d8350a876733', questionId, optionId);
-
+  let userPoll = new UserPoll( this.pollUser.userId, questionId, optionId);
   this.pollService.createPoll(JSON.stringify( userPoll ) )
   .subscribe(
     (response: Response) => {
       let votedQuestion = response.json();
 
-      console.log(votedQuestion);
       for( var i =0; i< this.pollQuestions.questions.length; i ++){
-      //for( let question of this.pollQuestions.questions ){
+
         if( this.pollQuestions.questions[i].questionId === votedQuestion.questionId){
           this.pollQuestions.questions[i] = votedQuestion;
         }
@@ -63,7 +60,7 @@ onScroll(event : Event ){
 }
 
 getFirstPage(){
-  this.pollService.getFirstPage()
+  this.pollService.getFirstPage(this.pollUser.userId)
   .subscribe(
     (response : Response ) => {
       console.log( response );

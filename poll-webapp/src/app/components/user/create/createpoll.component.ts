@@ -24,7 +24,6 @@ export class CreatePollComponent implements OnInit{
   }
 
   ngOnInit(){
-
     this.pollUser = this.cookieService.getObject('pollUser');
     if( this.pollUser === undefined ){
       this.router.navigate(['/login']);

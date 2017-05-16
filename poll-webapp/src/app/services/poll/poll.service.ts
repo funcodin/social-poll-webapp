@@ -15,13 +15,11 @@ export class PollService {
     return this.http.post('http://localhost:8080/ws/question/', pollQuestion, {headers} );
   }
 
-  getFirstPage(){
+  getFirstPage( userId: string){
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
-
-    return this.http.get('http://localhost:8080/ws/question/latest/user/dc6150a7ba9f89a81cbd4022dacdc854/limit/15', {headers} );
-
+    return this.http.get('http://localhost:8080/ws/question/latest/user/'+userId+'/limit/15', {headers} );
   }
 
   getNextPage( userId: string, limit: number, lastIndex: number ){
@@ -41,11 +39,11 @@ export class PollService {
     return this.http.post('http://localhost:8080/ws/userpoll/create', userPoll, {headers} );
   }
 
-  getFirstVotedPage(){
+  getFirstVotedPage(userId : string){
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:8080/ws/question/latestVotedByUser/user/fe7702db-d08f-44f8-8466-de434bd7c14b/limit/15', {headers} );
+    return this.http.get('http://localhost:8080/ws/question/latestVotedByUser/user/'+userId+'/limit/15', {headers} );
   }
 
   getNextVotedPage( userId: string, limit: number, lastIndex: number ){
@@ -56,11 +54,11 @@ export class PollService {
     return this.http.get( httpUrl, {headers });
   }
 
-  getPollCreatedFirstPage(){
+  getPollCreatedFirstPage( userId : string){
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:8080/ws/question/latestByUser/user/fe7702db-d08f-44f8-8466-de434bd7c14b/limit/15', {headers} );
+    return this.http.get('http://localhost:8080/ws/question/latestByUser/user/'+userId+'/limit/15', {headers} );
   }
 
 
