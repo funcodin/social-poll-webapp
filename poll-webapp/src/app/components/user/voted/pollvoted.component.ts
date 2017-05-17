@@ -33,7 +33,9 @@ export class PollVoted implements OnInit {
   }
 
   calculatePercentage( voteCount:number, totalVotes:number): number{
-    return (voteCount/totalVotes)*100
+    if(voteCount == 0)
+    return 0;
+    return (voteCount/totalVotes)*100 >> 0;
   }
 
   getFirstVotedPage(){

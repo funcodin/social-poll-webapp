@@ -50,7 +50,7 @@ export class PollCreatedComponent implements OnInit{
   calculatePercentage( voteCount:number, totalVotes:number): number{
     if(voteCount == 0)
     return 0;
-    return (voteCount/totalVotes)*100
+    return (voteCount/totalVotes)*100 >> 0;
   }
 
 }
