@@ -33,13 +33,19 @@ export class PollComponent implements OnInit {
       }
     }
 
+    calculatePercentage( voteCount:number, totalVotes:number): number{
+      if(voteCount == 0)
+      return 0;
+      return (voteCount/totalVotes)*100 >> 0;
+    }
+
 vote( optionId : string, questionId : string ){
   let userPoll = new UserPoll( this.pollUser.userId, questionId, optionId);
   this.pollService.createPoll(JSON.stringify( userPoll ) )
   .subscribe(
     (response: Response) => {
       let votedQuestion = response.json();
-
+       console.log( votedQuestion);
       for( var i =0; i< this.pollQuestions.questions.length; i ++){
 
         if( this.pollQuestions.questions[i].questionId === votedQuestion.questionId){
