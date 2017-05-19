@@ -4,6 +4,7 @@ import { PollService } from '../../services/poll/poll.service';
 import { UserPoll } from '../../types/userpoll';
 import {CookieService} from 'angular2-cookie/core';
 import {Router} from '@angular/router';
+import {NotificationsService} from 'angular2-notifications';
 
 @Component({
   selector: 'poll-list',
@@ -19,7 +20,7 @@ export class PollComponent implements OnInit {
   lastPageIndex: number;
   pollUser : any;
 
-    constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
+    constructor( private pollService: PollService, private cookieService : CookieService, private router : Router, private notificationService : NotificationsService){
 
     }
 
@@ -73,6 +74,11 @@ getFirstPage(){
       this.pollQuestions = response.json();
       this.isLastPage = this.pollQuestions.isLastPage;
       this.lastPageIndex = this.pollQuestions.lastQuestionIndex;
+
+      if( this.isLastPage && this.pollQuestions.questions.length == 0){
+        this.notificationService.success("YAY!!!","You are all caught up");
+      }
+
   },
     (error) => {
       console.log( error )
