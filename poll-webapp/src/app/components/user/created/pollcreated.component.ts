@@ -4,6 +4,7 @@ import { PollService } from '../../../services/poll/poll.service';
 import { Response } from '@angular/http';
 import { NgbProgressbar } from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from 'angular2-cookie/core';
+import {NotificationsService} from 'angular2-notifications';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class PollCreatedComponent implements OnInit{
   lastPageIndex: number;
   pollUser : any;
 
-  constructor( private pollService: PollService, private cookieService : CookieService, private router : Router){
+  constructor( private pollService: PollService, private cookieService : CookieService, private router : Router, private notificationService : NotificationsService){
 
   }
 
@@ -40,6 +41,9 @@ export class PollCreatedComponent implements OnInit{
         this.votedPolls = response.json();
         this.isLastPage = this.votedPolls.isLastPage;
         this.lastPageIndex = this.votedPolls.lastQuestionIndex;
+        if( this.isLastPage && this.votedPolls.questions.length == 0){
+          this.notificationService.success("Hurry!!!","Let's ask more questions!!!");
+        }
     },
       (error) => {
         console.log( error )
