@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http,Headers } from '@angular/http';
+import { BaseService } from '../shared/BaseService';
 
 @Injectable()
-export class SignupService {
+export class SignupService extends BaseService{
 
   constructor( private http: Http ){
-
+    super();
   }
 
   createUser( user: any ){
     console.log( user );
-    let headers = new Headers();
-    headers.append('Accept', 'application/json');
-    headers.append('Content-Type', 'application/json');
-
-    return this.http.post('http://localhost:8080/ws/user', user, {headers} );
+    let headers = this.getHeaders();
+    return this.http.post(this.getBaseEndpoint()+'/user', user, {headers} );
   }
 
 }
