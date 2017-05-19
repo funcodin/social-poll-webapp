@@ -5,6 +5,6 @@ export const CONFIG = {
     showProgressBar: true,
     pauseOnHover: false,
     clickToClose: true,
-    maxLength: 10
+    maxLength: 50
   }
 }
