@@ -82,7 +82,7 @@ getFirstPage(){
 
 
 getNextPage() {
-  this.pollService.getNextPage('dd1f07a9-e9b9-4882-880a-bdf9f1361ea5', 5, this.lastPageIndex )
+  this.pollService.getNextPage('dd1f07a9-e9b9-4882-880a-bdf9f1361ea5', 9, this.lastPageIndex )
   .subscribe(
     (response : Response ) => {
       console.log( response );
@@ -96,8 +96,6 @@ getNextPage() {
   )
 
 }
-
-
 
 
 }

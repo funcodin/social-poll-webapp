@@ -42,6 +42,7 @@ const appRoutes : Routes = [
   {path: 'create', component: CreatePollComponent},
   {path: 'signout', component: SignOutComponent}
 
+
 ];
 
 @NgModule({
