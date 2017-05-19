@@ -1,18 +1,18 @@
 <top-nav></top-nav>
 <div class="container-fluid container-block" >
 
-    <div class="col-md-4" *ngFor = "let question of votedPolls.questions; let i = index">
+    <div class="col-md-4 mt-5" *ngFor = "let question of votedPolls.questions; let i = index">
 
-      <div class="card card-layout">
+      <div class="card card-layout mt-5">
+        <div class="text-center">
+          <img class="rounded-circle" src="./assets/images/question1.jpg" alt="Card image cap" style="height:150px; width: 150px; margin-top:-4rem;">
+        </div>
 
         <div class="card-block">
           <h4 class="card-title">
-            Question #{{i+1}}
+             {{question.pollQuestion}}
           </h4>
-          <p class="card-text">
-            {{question.pollQuestion}}
-          </p>
-
+         
           <div class="progress-bar-div" *ngFor = "let option of question.options">
             <div class="">
                 {{option.optionValue}}
