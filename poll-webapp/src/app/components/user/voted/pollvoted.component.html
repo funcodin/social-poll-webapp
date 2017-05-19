@@ -5,14 +5,14 @@
 
       <div class="card card-layout mt-5">
         <div class="text-center">
-          <img class="rounded-circle" src="./assets/images/question1.jpg" alt="Card image cap" style="height:150px; width: 150px; margin-top:-4rem;">
+          <img class="rounded-circle" src="./assets/images/answered.jpg" alt="Card image cap" style="height:150px; width: 150px; margin-top:-4rem;">
         </div>
 
         <div class="card-block">
           <h4 class="card-title">
              {{question.pollQuestion}}
           </h4>
-         
+
           <div class="progress-bar-div" *ngFor = "let option of question.options">
             <div class="">
                 {{option.optionValue}}

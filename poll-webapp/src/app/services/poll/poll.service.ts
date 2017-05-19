@@ -16,7 +16,7 @@ export class PollService extends BaseService{
 
   getFirstPage( userId: string){
     let headers = this.getHeaders();
-    return this.http.get(this.getBaseEndpoint()+'/ws/question/latest/user/'+userId+'/limit/'+this.getLimit(), {headers} );
+    return this.http.get(this.getBaseEndpoint()+'/question/latest/user/'+userId+'/limit/'+this.getLimit(), {headers} );
   }
 
   getNextPage( userId: string, limit: number, lastIndex: number ){
