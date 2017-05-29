@@ -28,6 +28,7 @@ import { SignupService } from './services/signup/signup.service';
 import { SigninService } from './services/signin/signin.service';
 import { PollService } from './services/poll/poll.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { ContactUsService } from './services/contact/contact.service';
 
 
 const appRoutes : Routes = [
@@ -74,7 +75,8 @@ const appRoutes : Routes = [
     SignupService,
     SigninService,
     PollService,
-    CookieService
+    CookieService,
+    ContactUsService
 
    ],
   bootstrap: [AppComponent]
