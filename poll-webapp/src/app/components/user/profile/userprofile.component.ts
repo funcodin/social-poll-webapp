@@ -1,4 +1,5 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,ViewChild,OnInit} from '@angular/core';
+import { NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserProfileService } from '../../../services/profile/userprofile.service';
 import { Response } from '@angular/http';
@@ -14,7 +15,11 @@ import {NotificationsService} from 'angular2-notifications';
 })
 export class UserProfileComponent implements OnInit {
 
+  updatePollUser: any;
   pollUser: any;
+  genderList : string[] = ['FEMALE','MALE','NA'];
+
+  @ViewChild('updateProfileForm') updateProfileForm : NgForm;
 
   constructor( private userProfileService: UserProfileService, private cookieService : CookieService, private router : Router, private notificationService : NotificationsService){
 
@@ -23,6 +28,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(){
     this.pollUser = this.cookieService.getObject('pollUser');
+
     if( this.pollUser === undefined ){
       this.router.navigate(['/login']);
     }
@@ -41,6 +47,31 @@ export class UserProfileComponent implements OnInit {
         console.log( error )
       }
     )
+  }
+
+  onSubmit(){
+    this.updatePollUser =  this.updateProfileForm.value
+    console.log( 'updated poll user');
+    console.log( this.updatePollUser );
+    this.pollUser.gender = this.updatePollUser.gender;
+    this.pollUser.email = this.updatePollUser.email;
+    this.pollUser.contactNumber = this.updatePollUser.contactNumber;
+    console.log( 'poll user');
+    console.log( JSON.stringify(this.pollUser) );
+    this.userProfileService.updateUserProfile( JSON.stringify(this.pollUser) )
+    .subscribe(
+      (response : Response ) => {
+        console.log( response );
+        this.router.navigate(['/poll']);
+    },
+      (error) => {
+        console.log( error );
+      }
+    )
+  }
+
+  selectGender( gender : string ){
+    this.pollUser.gender = gender;
   }
 
 }

@@ -16,5 +16,11 @@ export class UserProfileService extends BaseService{
     return this.http.get( this.getBaseEndpoint()+'/user/userName/'+userName, {headers});
   }
 
+  updateUserProfile( updatedPollUser : any ){
+    let headers = this.getHeaders();
+    console.log( 'poll user in service ');
+    console.log( updatedPollUser);
+    return this.http.post( this.getBaseEndpoint()+'/user/updateUser', updatedPollUser, {headers});
+  }
 
 }

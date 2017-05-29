@@ -1,66 +1,65 @@
 <top-nav></top-nav>
 <div class="container-fluid align-center" >
-
-
-<div class="row justify-content-center">
-
-
-    <div class="col-md-6 mt-5 pt-3 align-self-center">
-
-
-
-      <div class="card card-layout mt-5">
-
-        <div class="text-center">
-          <img class="rounded-circle" src="./assets/images/asked.jpg" alt="Card image cap" style="height:150px; width: 150px; margin-top:-4rem;">
-        </div>
-
-        <div class="card-block">
-         <div class="">
-           <div class="form-group">
-             Username:
-             <input type="text" class="form-control" id="username" name="username" value="{{pollUser.username}}" readonly="readonly">
-           </div>
+   <div class="row justify-content-center">
+      <div class="col-md-6 mt-5 pt-3 align-self-center">
+         <div class="card card-layout mt-5">
+            <div class="text-center">
+               <img class="rounded-circle" src="./assets/images/profile.jpg" alt="Card image cap" style="height:150px; width: 150px; margin-top:-4rem;">
+            </div>
+            <div class="card-block">
+               <form (ngSubmit)="onSubmit()" #updateProfileForm="ngForm">
+               <div class="">
+                  <div class="form-group">
+                     Username:
+                     <input type="text" class="form-control" ngModel="{{pollUser.username}}" id="username" name="username" value="{{pollUser.username}}" readonly="readonly">
+                  </div>
+               </div>
+               <div class="form-group">
+                 <label>Password</label>
+                 <input type="password" class="form-control" ngModel="{{pollUser.password}}" id="password" name="password" value="{{pollUser.password}}">
+               </div>
+               <div class="">
+                  <div class="form-group">
+                     Email:
+                     <input type="text" class="form-control" ngModel="{{pollUser.email}}" id="email" name="email" value="{{pollUser.email}}">
+                  </div>
+               </div>
+               Gender:
+               <div class="form-group">
+                  <div ngbDropdown  class="d-inline-block" >
+                     <button type="button" class="btn btn-outline-primary" ngModel="{{pollUser.gender}}" id="gender" name="gender" ngbDropdownToggle ngDefaultControl>{{pollUser.gender}}</button>
+                     <div class="dropdown-menu" aria-labelledby="gender">
+                        <button type="button" class="dropdown-item" (click)="selectGender('Female')">Female</button>
+                        <button type="button" class="dropdown-item" (click)="selectGender('Male')">Male</button>
+                        <button type="button" class="dropdown-item" (click)="selectGender('NA')">NA</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="">
+                  <div class="form-group">
+                     Contact Number:
+                     <input type="number" class="form-control" ngModel="{{pollUser.contactNumber}}"  id="contactNumber" name="contactNumber" value="{{pollUser.contactNumber}}" >
+                  </div>
+               </div>
+               <div class="">
+                  <div class="form-group">
+                     Questions Asked:
+                     <input type="text" class="form-control" ngModel="{{pollUser.questionsAsked}}"  id="questionsAsked" name="questionsAsked" value="{{pollUser.questionsAsked}}" readonly="readonly">
+                  </div>
+               </div>
+               <div class="">
+                  <div class="form-group">
+                     Questions Voted:
+                     <input type="text" class="form-control" ngModel="{{pollUser.questionsAnswered}}"  id="questionsAnswered" name="questionsAnswered" value="{{pollUser.questionsAnswered}}" readonly="readonly">
+                  </div>
+               </div>
+               <div class="text-center">
+                  <button type="submit" class="btn btn-success">Update</button>
+                  <!-- <button type="button" (click)="discard()" class="ml-5 btn btn-warning">Discard Changes</button> -->
+               </div>
+               </form>
+            </div>
          </div>
-         <div class="">
-           <div class="form-group">
-             Gender:
-             <input type="text" class="form-control" id="username" name="username" value="{{pollUser.gender}}" >
-           </div>
-         </div>
-
-         <div class="">
-            Email:
-           <div class="input-group pb-3">
-            <input type="text" class="form-control" id="email" name="email" value="{{pollUser.email}}">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button">Edit</button>
-            </span>
-          </div>
-        </div>
-
-         <div class="">
-           <div class="form-group">
-             Contact Number:
-             <input type="text" class="form-control"  id="username" name="username" value="{{pollUser.contactNumber}}" >
-           </div>
-         </div>
-         <div class="">
-           <div class="form-group">
-             Questions Asked:
-             <input type="text" class="form-control"  id="username" name="username" value="{{pollUser.questionsAsked}}" >
-           </div>
-         </div>
-         <div class="">
-           <div class="form-group">
-             Questions Voted:
-             <input type="text" class="form-control"  id="username" name="username" value="{{pollUser.questionsAnswered}}" >
-           </div>
-         </div>
-
-        </div>
       </div>
-
-    </div>
-</div>
+   </div>
 </div>
