@@ -18,6 +18,7 @@ import {AboutUsComponent} from './components/about/about.component';
 import { PollComponent } from './components/polls/poll.component';
 import { PollCreatedComponent } from './components/user/created/pollcreated.component';
 import { CreatePollComponent } from './components/user/create/createpoll.component';
+import { UserProfileComponent } from './components/user/profile/userprofile.component';
 
 import { SignOutComponent } from './components/signout/signout.component';
 
@@ -27,6 +28,7 @@ import { PollVoted } from './components/user/voted/pollvoted.component';
 import { SignupService } from './services/signup/signup.service';
 import { SigninService } from './services/signin/signin.service';
 import { PollService } from './services/poll/poll.service';
+import { UserProfileService } from './services/profile/userprofile.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { ContactUsService } from './services/contact/contact.service';
 
@@ -41,7 +43,8 @@ const appRoutes : Routes = [
   {path: 'voted', component: PollVoted},
   {path: 'asked', component: PollCreatedComponent},
   {path: 'create', component: CreatePollComponent},
-  {path: 'signout', component: SignOutComponent}
+  {path: 'signout', component: SignOutComponent},
+  {path: 'profile', component: UserProfileComponent}
 
 
 ];
@@ -59,8 +62,8 @@ const appRoutes : Routes = [
     PollVoted,
     PollCreatedComponent,
     CreatePollComponent,
-    SignOutComponent
-
+    SignOutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ const appRoutes : Routes = [
     SigninService,
     PollService,
     CookieService,
+    UserProfileService,
     ContactUsService
 
    ],
