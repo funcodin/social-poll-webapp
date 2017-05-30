@@ -1,0 +1,40 @@
+.bottom-navbar {
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 0px;
+  padding-left: 0px;
+  background: #2C3E50;
+  font-size: 100%;
+  border-radius: 0px;
+  border: 0px;
+
+}
+
+.navbar-align-left{
+  justify-content: flex-end;
+  margin-right: 2%;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 180%;
+  margin-left: 2%;
+}
+
+.navbar-brand:hover{
+  color: #18BC9C;
+  font-size: 180%;
+}
+
+.navbar-nav a {
+  color: #fff;
+}
+.navbar-nav a:hover {
+  color: #fff;
+}
+
+.navbar-nav .active a{
+  background-color: #2C3E50;
+  color: #18BC9C;
+}

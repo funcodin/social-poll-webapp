@@ -10,6 +10,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 //Components
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './components/shared/topnav/topnav.component';
+import { BottomNavComponent } from './components/shared/bottomnav/bottomnav.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
@@ -53,6 +54,7 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     TopNavComponent,
+    BottomNavComponent,
     HomeComponent,
     LoginComponent,
     SignupComponent,
