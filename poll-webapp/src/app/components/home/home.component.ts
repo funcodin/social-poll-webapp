@@ -14,7 +14,7 @@ constructor(private router: Router, private notificationService : NotificationsS
 }
 
   ngOnInit(){
-    this.notificationService.success("Rohit","THE GREAT");
+    //this.notificationService.success("Rohit","THE GREAT");
   }
 
   loadLogIn(){
