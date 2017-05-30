@@ -1,0 +1,31 @@
+<nav class="navbar navbar-toggleable-md navbar-light bottom-navbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand" routerLink="/">
+    <i class="fa fa-shopping-bag">
+    </i>
+    Poll Bag
+  </a>
+ 
+  <div class="collapse navbar-collapse navbar-align-left">
+    <ul class="navbar-nav navbar-right">
+
+      <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact">
+          <i class="fa fa-phone">
+          </i>
+            Contact Us
+          </a>
+      </li>
+      <li  *ngIf ="isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">
+          <i class="fa fa-info">
+          </i>
+           About Us
+         </a>
+      </li>
+    </ul>
+  </div>
+</nav>
