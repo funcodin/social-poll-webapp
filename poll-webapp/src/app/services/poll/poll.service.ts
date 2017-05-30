@@ -19,7 +19,7 @@ export class PollService extends BaseService{
     return this.http.get(this.getBaseEndpoint()+'/question/latest/user/'+userId+'/limit/'+this.getLimit(), {headers} );
   }
 
-  getNextPage( userId: string, limit: number, lastIndex: number ){
+  getNextPage( userId: string, lastIndex: number ){
     let headers = this.getHeaders();
     let httpUrl: string = this.getBaseEndpoint()+"/question/getPaginatedQuestion/user/"+userId+"/lastQuestionIndex/"+lastIndex+"/limit/"+this.getLimit();
     return this.http.get( httpUrl, {headers });

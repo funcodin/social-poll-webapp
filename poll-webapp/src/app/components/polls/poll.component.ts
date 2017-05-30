@@ -15,13 +15,13 @@ import {NotificationsService} from 'angular2-notifications';
 export class PollComponent implements OnInit {
 
   pollQuestions: any =[];
+  isFirstPage: boolean = true;
   isLastPage: boolean = false;
   userId: string;
   lastPageIndex: number;
   pollUser : any;
 
     constructor( private pollService: PollService, private cookieService : CookieService, private router : Router, private notificationService : NotificationsService){
-
     }
 
     ngOnInit(){
@@ -61,10 +61,6 @@ vote( optionId : string, questionId : string ){
   );
 }
 
-onScroll(event : Event ){
-  //console.log( event);
-
-}
 
 getFirstPage(){
   this.pollService.getFirstPage(this.pollUser.userId)
@@ -74,7 +70,7 @@ getFirstPage(){
       this.pollQuestions = response.json();
       this.isLastPage = this.pollQuestions.isLastPage;
       this.lastPageIndex = this.pollQuestions.lastQuestionIndex;
-
+      this.isFirstPage = true;
       if( this.isLastPage && this.pollQuestions.questions.length == 0){
         this.notificationService.success("YAY!!!","You are all caught up");
       }
@@ -88,13 +84,18 @@ getFirstPage(){
 
 
 getNextPage() {
-  this.pollService.getNextPage('dd1f07a9-e9b9-4882-880a-bdf9f1361ea5', 9, this.lastPageIndex )
+
+  this.pollService.getNextPage( this.pollUser.userId, this.lastPageIndex )
   .subscribe(
     (response : Response ) => {
       console.log( response );
       this.pollQuestions = response.json();
       this.isLastPage = this.pollQuestions.isLastPage;
       this.lastPageIndex = this.pollQuestions.lastQuestionIndex;
+      if( this.isLastPage ){
+      this.isFirstPage = false;
+      }
+
   },
     (error) => {
       console.log( error )
@@ -102,6 +103,5 @@ getNextPage() {
   )
 
 }
-
 
 }
