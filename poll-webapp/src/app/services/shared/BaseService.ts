@@ -2,7 +2,7 @@ import { Headers } from '@angular/http';
 
 export class BaseService {
 
- public baseEndpoint : string = 'http://localhost:8080/ws';
+ public baseEndpoint : string = 'http://poll-core:8080/ws';
  public limit : number = 9;
 
   getBaseEndpoint(): string {
@@ -13,7 +13,7 @@ export class BaseService {
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
-   
+
     return headers;
   }
 
