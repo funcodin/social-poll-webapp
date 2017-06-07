@@ -4,6 +4,7 @@ import { SigninService } from '../../services/signin/signin.service';
 import { Response } from '@angular/http';
 import {Router} from '@angular/router';
 import {CookieService} from 'angular2-cookie/core';
+import {NotificationsService} from 'angular2-notifications';
 
 @Component({
   selector: 'login-page',
@@ -18,7 +19,7 @@ export class LoginComponent{
 @ViewChild('loginForm') loginForm : NgForm;
 
 
-  constructor( private signinService : SigninService, private cookieService : CookieService, private router : Router ){
+  constructor( private signinService : SigninService, private cookieService : CookieService, private router : Router, private notificationService : NotificationsService ){
 
   }
 
@@ -36,7 +37,7 @@ onSubmit(){
     },
     (error) => {
       console.log( error )
-      this.isError = true;
+      this.notificationService.error(error.errorMessage);
       this.loginForm.reset();
     }
   )
