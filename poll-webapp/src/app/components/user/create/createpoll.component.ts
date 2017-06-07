@@ -15,6 +15,7 @@ export class CreatePollComponent implements OnInit{
   pollUser : any;
   optionTypes : string[] = ['BINARY','MULTIPLE','STAR', 'NUMBER'];
   optionValues : string[] =[];
+  optionLimitReached : boolean = false;
 
   @ViewChild('createPollForm') createPollForm : NgForm;
 
@@ -38,11 +39,15 @@ export class CreatePollComponent implements OnInit{
   addOption(){
     console.log("item added")
     this.optionValues.push('');
+    if( this.optionValues.length == 5){
+      this.optionLimitReached = true;
+    }
   }
 
 
   removeOption(){
       this.optionValues.pop();
+      this.optionLimitReached = false;
   }
 
   optionSelected( option : string ){

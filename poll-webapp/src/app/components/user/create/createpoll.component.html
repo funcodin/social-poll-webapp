@@ -4,7 +4,7 @@
 
 <div class="row justify-content-center">
   <div class="card mt-5 card-layout" style="width: 40rem;">
-    
+
     <div class="text-center mt-5">
       <h3>Create Poll</h3>
 
@@ -22,7 +22,7 @@
          </div>
 
          <div class="row justify-content-center mb-4">
-           <button type="button" class="btn btn-primary mr-2" id="addOption" (click)="addOption()">+</button>
+           <button type="button" class="btn btn-primary mr-2" id="addOption" (click)="addOption()" [disabled] = optionLimitReached>+</button>
            <button type="button" class="btn btn-warning ml-2" id="removeOption" (click)="removeOption()">-</button>
          </div>
 
