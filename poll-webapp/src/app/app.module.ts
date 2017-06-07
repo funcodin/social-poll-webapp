@@ -45,7 +45,8 @@ const appRoutes : Routes = [
   {path: 'asked', component: PollCreatedComponent},
   {path: 'create', component: CreatePollComponent},
   {path: 'signout', component: SignOutComponent},
-  {path: 'profile', component: UserProfileComponent}
+  {path: 'profile', component: UserProfileComponent},
+  { path: '**', component: HomeComponent }
 
 
 ];

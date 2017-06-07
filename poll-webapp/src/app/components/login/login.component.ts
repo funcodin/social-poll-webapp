@@ -37,7 +37,8 @@ onSubmit(){
     },
     (error) => {
       console.log( error )
-      this.notificationService.error(error.errorMessage);
+      let errorResponse = error.json();
+      this.notificationService.error("Error!!",errorResponse.errorMessage);
       this.loginForm.reset();
     }
   )
