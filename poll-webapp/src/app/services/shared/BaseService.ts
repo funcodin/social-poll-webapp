@@ -2,7 +2,7 @@ import { Headers } from '@angular/http';
 
 export class BaseService {
 
- public baseEndpoint : string = 'http://localhost:8080/ws';
+ public baseEndpoint : string = 'http://pollbag:8080/ws';
  public limit : number = 9;
 
   getBaseEndpoint(): string {
